@@ -32,3 +32,33 @@ const questions=[
   },
 ];
 
+function getAnswers() {
+
+  return inquirer.prompt(questions).then((answers) => {
+
+    
+
+   index=questions[0].choices.indexOf(answers.options);
+   
+   if (index==0)
+    getEmployee();
+   else if (index==1)
+    addEmployee();
+   else if (index==2)
+    updateEmployee();
+   else if (index==3)
+    getRoles();
+   else if (index==4)
+    addRole();
+   else if(index==5)
+    getDepartment()
+   else if (index==6)
+    addDepartment();
+   else
+    return;
+
+ });
+}
+
+
+getAnswers();
