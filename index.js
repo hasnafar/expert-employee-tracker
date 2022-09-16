@@ -61,4 +61,18 @@ function getAnswers() {
 }
 
 
+function getEmployee(){
+
+  db.promise().query('SELECT * FROM employee')
+  .then(([rows,fields]) => {
+    console.table(rows);
+  })
+  .then(getAnswers);
+  
+}
+
+
+
+//Start Program
+
 getAnswers();
