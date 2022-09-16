@@ -71,6 +71,27 @@ function getEmployee(){
   
 }
 
+function getDepartment(){
+
+    db.promise().query('SELECT * FROM department')
+    .then(([rows,fields]) => {
+      console.table(rows);
+    })
+    .then(getAnswers);
+    
+}
+
+function getRoles(){
+
+  db.promise().query('SELECT * FROM role')
+  .then(([rows,fields]) => {
+    console.table(rows);
+  })
+  .then(getAnswers);
+  
+}
+
+
 
 
 //Start Program
